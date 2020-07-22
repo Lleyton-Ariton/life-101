@@ -295,7 +295,7 @@ def run():
         DropdownMenuButton('Cells 2', on_click=load_cells2),
         DropdownMenuButton('Hunting Green Blobs', on_click=load_hunting_green_blobs),
         DropdownMenuButton('Ecosystem 1', on_click=load_ecosystem1)
-    ), color=color.azure, x=0.5, y=0.47)
+    ), color=color.azure, x=-xratio + 0.1, y=0.47)
 
     drop_down.arrow_symbol.color = color.white
 
