@@ -13,14 +13,15 @@ app = Ursina()
 window.title = 'Particle Life'
 window.exit_button.enabled = False
 window.size = Vec2(window.fullscreen_size[0]*0.8, window.fullscreen_size[1]*0.8)
-window.color = color.black
 
+xratio = (float(window.fullscreen_size[0]) * (0.81 / 1367)) - 0.025  # Somewhat responsive
+
+window.color = color.black
 window.center_on_screen()
 scene.camera.orthographic = True
 
 X_WINDOW_RANGE = -30.0, 30.0
 Y_WINDOW_RANGE = -15.0, 15.0
-
 
 COLORS = list(color.colors.values())
 
@@ -286,15 +287,15 @@ def run():
     universe.init()
 
     Button(model=Quad(scale=(1, 0.5)), text='Reset', scale=0.1,
-           color=color.azure, x=window.top[0] - 0.725,
-           y=window.top[1] - 0.05, on_click=reset)
+           color=color.azure, x=-xratio,
+           y=0.46, on_click=reset)
 
     drop_down = DropdownMenu('Presets', buttons=(
         DropdownMenuButton('Cells 1', on_click=load_cells1),
         DropdownMenuButton('Cells 2', on_click=load_cells2),
         DropdownMenuButton('Hunting Green Blobs', on_click=load_hunting_green_blobs),
         DropdownMenuButton('Ecosystem 1', on_click=load_ecosystem1)
-    ), color=color.azure, x=window.top_left[0] + 0.15, y=0.46)
+    ), color=color.azure, x=0.5, y=0.47)
 
     drop_down.arrow_symbol.color = color.white
 
@@ -302,4 +303,5 @@ def run():
 
 
 if __name__ == '__main__':
+    print(window.fullscreen_size)
     run()
