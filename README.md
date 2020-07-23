@@ -52,7 +52,7 @@ The principles of Particle Life were originally inspired by Jeffrey Ventrella's 
 
 ## Primordial Particle System
 
-A *primordial particle system* is an environement of particles that move and act based on a single equation. Life-like behaviours and properties can be observed, such as the creation of somewhat functioning "cells". The parameters of the motion equation of the particles can be tweaked, which allows for the experimentation and observation of what kind of results and interesting behaviours different settings might achieve.
+A *primordial particle system* is an environment of particles that move and act based on a single equation. Life-like behaviours and properties can be observed, such as the creation of somewhat functioning "cells". The parameters of the motion equation of the particles can be tweaked, which allows for the experimentation and observation of what kind of results and interesting behaviours different settings might achieve.
 
 | ![](./imgs/pps/pps-1.png) | ![](./imgs/pps/pps-2.png) |
 |:-:| :-: |
@@ -65,23 +65,23 @@ The idea and implementation of this primordial particle system is from [this vid
 for all rendering and graphics. The code was further optimized with the *jit compiler* from [*Numba*](http://numba.pydata.org/)
 to allow for smooth performance especially with many particles. 
 
-The simulation starts with a given number of particles initialized at random coordinates in the environement. Every particle has:
+The simulation starts with a given number of particles initialized at random coordinates in the environment. Every particle has:
 
-- A positon *(x, y)*
+- A position *(x, y)*
 - An orientation &Phi;
 - A constant velocity *v*
 
-The constant **velocity** is the same amongst all particles in the system for a given environement.
+The constant **velocity** is the same amongst all particles in the system for a given environment.
 
 Every timestep, each particle will rotate by a fixed angle &alpha;
 
-The property that yields such inetersting behaviour is that particles are influenced by their neighbours. Every particle has a sensing circle with given radius *r*, that within that radius will count the number of other particles in both the *Left* (Top) hemisphere and *Right* (Bottom) hemisphere. The particle will then turn towards the hemisphere with more particles, expressed by: 
+The property that yields such interesting behaviour is that particles are influenced by their neighbours. Every particle has a sensing circle with given radius *r*, that within that radius will count the number of other particles in both the *Left* (Top) hemisphere and *Right* (Bottom) hemisphere. The particle will then turn towards the hemisphere with more particles, expressed by: 
 
 <p style="text-align: center;">sign(R<sub>t</sub>-L<sub>t</sub>) * &beta; * N<sub>t</sub></p>
 
 Where R<sub>t</sub> is the number of particles in the *Right* hemisphere at a given timestep, L<sub>t</sub> is the number of particles in the *Left* hemisphere at a given timestep, &beta; is a settable angle parameter and N<sub>t</sub> is the sum of particles in both *Right* and *Left* hemispheres.
 
-The **radius** of which a particle can sense it's surrounding neighbours is a settable parameter and consstant amongst all in the system of a given environement.
+The **radius** of which a particle can sense it's surrounding neighbours is a settable parameter and constant amongst all in the system of a given environment.
 
 The final motion equation of the particles is thus:
 
@@ -96,11 +96,11 @@ The implementation is slightly different however, as the parameters act within *
 
 ## TODO:
 
-- Must update READMEs for all different simulatons
+- Must update READMEs for all different simulations
 
 ### Conway's Game of Life
 
-- Must add the final simulaton: **Conway's Game of Life**
+- Must add the final simulation: **Conway's Game of Life**
 	- Must add respective documentation
 	- Take images
 
