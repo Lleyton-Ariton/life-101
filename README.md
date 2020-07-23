@@ -58,6 +58,9 @@ A *primordial particle system* is an environement of particles that move and act
 |:-:| :-: |
 | ![](./imgs/pps/pps-3.png)| ![](./imgs/pps/pps-4.png) |
 
+
+### Explanation
+
 The idea and implementation of this primordial particle system is from [this video](https://www.youtube.com/watch?v=makaJpLvbow) from *[IZGartlife](https://www.youtube.com/channel/UCBoryeFK_61rcKu8GNv6hLw)*. There also exists a research paper on the topic and implementation available [here](https://www.nature.com/articles/srep37969). he code uses the [*Ursina*](https://www.ursinaengine.org/) graphics engine
 for all rendering and graphics. The code was further optimized with the *jit compiler* from [*Numba*](http://numba.pydata.org/)
 to allow for smooth performance especially with many particles. 
