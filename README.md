@@ -77,19 +77,19 @@ Every timestep, each particle will rotate by a fixed angle &alpha;
 
 The property that yields such interesting behaviour is that particles are influenced by their neighbours. Every particle has a sensing circle with given radius *r*, that within that radius will count the number of other particles in both the *Left* (Top) hemisphere and *Right* (Bottom) hemisphere. The particle will then turn towards the hemisphere with more particles, expressed by: 
 
-<p style="text-align: center;">sign(R<sub>t</sub>-L<sub>t</sub>) * &beta; * N<sub>t</sub></p>
+<p align="center">sign(R<sub>t</sub>-L<sub>t</sub>) * &beta; * N<sub>t</sub></p>
 
 Where R<sub>t</sub> is the number of particles in the *Right* hemisphere at a given timestep, L<sub>t</sub> is the number of particles in the *Left* hemisphere at a given timestep, &beta; is a settable angle parameter and N<sub>t</sub> is the sum of particles in both *Right* and *Left* hemispheres.
 
-The **radius** of which a particle can sense it's surrounding neighbours is a settable parameter and constant amongst all in the system of a given environment.
+The **radius** of which a particle can sense it's surrounding neighbours is a settable parameter and constant amongst all in the system of a given environment.s
 
 The final motion equation of the particles is thus:
 
-<p style="text-align: center;">&Delta;&Phi;/&Delta;t = &alpha; + sign(R<sub>t</sub>-L<sub>t</sub>) * &beta; * N<sub>t</sub></p>
+<p align="center">&Delta;&Phi;/&Delta;t = &alpha; + sign(R<sub>t</sub>-L<sub>t</sub>) * &beta; * N<sub>t</sub></p>
 
 The position of the particle *p* in the consecutive timestep *p<sub>t+1* is then updated by:
 
-<p style="text-align: center;">p<sub>t+1</sub> = p<sub>t</sub> + ((cos &Phi;<sub>t</sub>), (sin &Phi;<sub>t</sub>)) * v</p>
+<p align="center">p<sub>t+1</sub> = p<sub>t</sub> + ((cos &Phi;<sub>t</sub>), (sin &Phi;<sub>t</sub>)) * v</p>
 
 The implementation is slightly different however, as the parameters act within *Ursina* slightly differently than in the research paper. This is not really an issue, as it just affects the scale of the numbers required to achieve the same behaviour (the parameters such as **radius** and **velocity** just needed to be increased by a factor of **10** to act the same). **The equation is exactly the same**. The particles will also generate with random coordinates only in a set boundary box (they can however be free to move past it).
 
