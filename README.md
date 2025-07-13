@@ -108,4 +108,4 @@ The implementation is slightly different however, as the parameters act within *
 
 - Must make PPS responsive
 - Improve crude responsiveness for PLIFE
-- Make Conway's GOF responsive
+- Make Conway's GOL responsive
